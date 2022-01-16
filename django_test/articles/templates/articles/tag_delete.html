@@ -1,0 +1,23 @@
+{% extends "articles/base.html" %}
+
+
+{% block content %}
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row align-items-stretch retro-layout-2">
+
+            <ul>
+                <li>{{object.tag_name}}</li>
+
+            <li>Вы уверены?</li>
+        <form method="post">
+        {% csrf_token %}
+            <button type="submit">Да</button>
+        </form>
+            </ul>
+
+        </div>
+      </div>
+    </div>
+{% endblock %}
+

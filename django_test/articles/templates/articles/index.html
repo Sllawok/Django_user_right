@@ -1,0 +1,23 @@
+{% extends "articles/base.html" %}
+
+
+{% block content %}
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row align-items-stretch retro-layout-2">
+
+          <div class="col-md-4">
+            <a href="{% url 'articles:article' id=article.id %}" class="h-entry mb-30 v-height gradient" style="background-image: url('images/img_1.jpg');">
+
+              <div class="text">
+                <h2>The most popular article:</h2>
+                <h2>{{article.article_name}}</h2>
+                <span class="date">{{article.article_date}}</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+

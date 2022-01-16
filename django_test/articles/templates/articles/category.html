@@ -1,0 +1,41 @@
+{% extends "articles/base.html" %}
+
+
+{% block content %}
+    
+    <div class="py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <span>Category</span>
+            <h3>All articles</h3>
+            <p>The most interesting articles are collected here!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-section bg-white">
+      <div class="container">
+        <div class="row">
+          {% for article in articles.all%}
+          <div class="col-lg-4 mb-4">
+            <div class="entry2">
+              <a href="{% url 'articles:article' id=article.id %}">
+                <img src="{{article.article_img.url}}" alt="Image" class="img-fluid rounded"></a>
+              <div class="excerpt">
+              <h2><a href="{% url 'articles:article' id=article.id %}">{{article.article_name}}</a></h2>
+              <div class="post-meta align-items-center text-left clearfix">
+
+                <span>&nbsp;-&nbsp; {{article.article_date}}</span>
+              </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+        </div>
+    </div>
+  </div>
+    
+{% endblock %}
