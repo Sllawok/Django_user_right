@@ -1,0 +1,1 @@
+# Django_user_right
